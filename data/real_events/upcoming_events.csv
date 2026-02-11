@@ -1,0 +1,7 @@
+event_id,event_name,event_type,sport,distance_km,terrain,gender_category,expected_duration_hours,location
+E1,Ironman World Championship,Ironman,Triathlon,226,road,M,8.5,Kona Hawaii
+E2,Berlin Marathon,Marathon,Running,42.195,road,M,2.5,Berlin
+E3,Tour de France Stage 1,Cycling Race,Cycling,180,road,M,4.2,France
+E4,London Marathon,Marathon,Running,42.195,road,M,2.6,London
+E5,World Aquatics 10km Open Water,Swimming Event,Swimming,10,open_water,M,2.0,Doha
+E6,Olympic Distance Triathlon Cup,Triathlon,Triathlon,51.5,road,M,1.9,Paris

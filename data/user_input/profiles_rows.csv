@@ -1,0 +1,2 @@
+id,first_name,last_name,gender,date_of_birth,created_at,banner_image_url,avatar_url,health_passport_onboarded,user_type
+779b2e98-d061-4748-bcef-78b1c43570ba,Mats,Byback,male,1967-01-21,2025-01-08 14:05:56.90052+00,https://tmffcijysdajfwyoqvuh.supabase.co/storage/v1/object/public/banners/779b2e98-d061-4748-bcef-78b1c43570ba-0.25235022802297347.jpg,https://tmffcijysdajfwyoqvuh.supabase.co/storage/v1/object/public/avatars/779b2e98-d061-4748-bcef-78b1c43570ba/779b2e98-d061-4748-bcef-78b1c43570ba-0.5323328819917852.jpg,false,human
