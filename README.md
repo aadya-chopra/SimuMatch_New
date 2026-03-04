@@ -81,9 +81,12 @@ venv\Scripts\activate      # windows
 ```
 
 #### 3. Install dependencies
+Important: install PyTorch separately first
 
 ```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements.txt
+
 ```
 
 #### 4. Add your `.env` file
@@ -95,6 +98,8 @@ OPENAI_API_KEY=your_key
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=your_password
+GROQ_API_KEY=your_key
+
 ```
 #### 5. Neo4j Desktop
 Download: https://neo4j.com/download/ 
@@ -107,7 +112,28 @@ Steps:
 ---
 
 
-### Run Pipeline
+### How to Run SimuMatch
+#### Ensure data folders exist
+```bash
+mkdir -p data/raw
+mkdir -p data/processed
+```
+#### Note:
+data/processed/ is intentionally not stored in Git.
+Everyone generates their own embedded data locally
+Upload the Olympic dataset CSV inside:
+
+```bash
+data/raw/
+```
+#### Run Preprocess Pipeline
+```bash
+python src/data_pipeline/preprocess.py
+```
+This will generate:
+```bash
+data/processed/clean_athletes.csv
+```
 
 #### Generate embeddings
 
@@ -117,7 +143,37 @@ python src/matching/vector_search.py
 ```bash
 python src/matching/event_embeddings.py
 ```
+Generated files:
 
+```bash
+data/processed/athletes_with_embeddings.csv
+data/processed/events_with_embeddings.csv
+data/athlete_vectors.npy
+data/event_vectors.npy
+```
+#### Generate Real Event Embeddings
+```bash
+python src/matching/real_event_embeddings.py
+```
+Expected output:
+
+Encoding real events...
+
+✅ Saved processed events to data/real_events/real_events_with_embeddings.csv
+✅ Saved embeddings to data/real_events/real_event_vectors.npy
+
+Real event embedding pipeline complete!
+
+#### Add API Key
+
+Create .env file:
+```bash
+GROQ_API_KEY=enter_api_key_created_in_groq
+```
+#### Run Streamlit App
+```bash
+streamlit run streamlit_app/app.py
+```
 #### Build graph
 
 ```bash
