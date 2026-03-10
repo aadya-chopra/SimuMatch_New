@@ -69,7 +69,7 @@ Follow these steps to run SimuMatch on your machine.
 
 ```bash
 git clone https://github.com/shauryayay/SimuMatch.git
-cd SimuMatch
+cd SimuMatch_New
 ```
 
 #### 2. Create & activate virtual env
